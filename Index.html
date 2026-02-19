@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Constructora Estero | Construcción y Servicios Industriales</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root{
+    --primary:#0F6B53;
+    --primary-dark:#0A4E3E;
+    --light:#F4F6F5;
+    --dark:#1f1f1f;
+    --white:#ffffff;
+}
+/* ORGANIGRAMA PROFESIONAL */
+
+.org-chart ul {
+    padding-top: 20px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+
+.org-chart li {
+    list-style-type: none;
+    text-align: center;
+    position: relative;
+    padding: 20px 10px 0 10px;
+}
+
+/* Líneas verticales */
+.org-chart li::before,
+.org-chart li::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 50%;
+    border-top: 2px solid #0F6B53;
+    width: 50%;
+    height: 20px;
+}
+
+.org-chart li::after {
+    right: auto;
+    left: 50%;
+    border-left: 2px solid #0F6B53;
+}
+
+.org-chart li:only-child::after,
+.org-chart li:only-child::before {
+    display: none;
+}
+
+.org-chart li:only-child {
+    padding-top: 0;
+}
+
+.org-chart li:first-child::before,
+.org-chart li:last-child::after {
+    border: 0 none;
+}
+
+.org-chart li:last-child::before {
+    border-right: 2px solid #0F6B53;
+    border-radius: 0 5px 0 0;
+}
+
+.org-chart li:first-child::after {
+    border-radius: 5px 0 0 0;
+}
+
+/* Línea vertical hacia abajo */
+.org-chart ul ul::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    border-left: 2px solid #0F6B53;
+    width: 0;
+    height: 20px;
+}
+
+/* Estilo de los nodos */
+.node {
+    background: #0F6B53;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 6px;
+    display: inline-block;
+    font-weight: 500;
+    min-width: 180px;
+}
+
+*{margin:0;padding:0;box-sizing:border-box;}
+
+body{
+    font-family:'Inter',sans-serif;
+    background:var(--light);
+    color:var(--dark);
+    line-height:1.6;
+}
+
+/* NAV */
+header{
+    background:var(--white);
+    padding:15px 8%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    border-bottom:1px solid #e0e0e0;
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+}
+
+.logo img{
+    height:50px;
+    margin-right:10px;
+}
+
+nav a{
+    margin-left:25px;
+    text-decoration:none;
+    color:var(--dark);
+    font-weight:500;
+}
+
+nav a:hover{
+    color:var(--primary);
+}
+
+/* HERO */
+.hero{
+    background:linear-gradient(rgba(10,78,62,0.85),rgba(10,78,62,0.85)),
+    url('https://images.unsplash.com/photo-1581091870627-3d69a4c2b6a2');
+    background-size:cover;
+    background-position:center;
+    color:var(--white);
+    padding:140px 8%;
+}
+
+.hero h2{
+    font-size:42px;
+    max-width:700px;
+}
+
+.hero p{
+    margin-top:20px;
+    font-size:18px;
+}
+
+.btn{
+    display:inline-block;
+    margin-top:30px;
+    padding:12px 28px;
+    background:var(--white);
+    color:var(--primary-dark);
+    font-weight:600;
+    text-decoration:none;
+    border-radius:4px;
+}
+
+/* SECTIONS */
+section{
+    padding:80px 8%;
+}
+
+section h3{
+    font-size:30px;
+    margin-bottom:30px;
+    color:var(--primary-dark);
+}
+
+/* GRID */
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:30px;
+}
+
+.card{
+    background:var(--white);
+    padding:30px;
+    border-radius:6px;
+    box-shadow:0 4px 12px rgba(0,0,0,0.05);
+    border-top:4px solid var(--primary);
+}
+
+/* ORGANIGRAMA */
+.org{
+    display:flex;
+    flex-wrap:wrap;
+    gap:20px;
+}
+
+.org div{
+    background:var(--primary);
+    color:white;
+    padding:15px 20px;
+    border-radius:5px;
+    font-weight:500;
+}
+
+/* GALERÍA */
+.gallery{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:15px;
+}
+
+.gallery img{
+    width:100%;
+    border-radius:5px;
+    object-fit:cover;
+    height:200px;
+}
+
+/* FORMULARIO */
+form{
+    max-width:600px;
+    margin:auto;
+    display:flex;
+    flex-direction:column;
+    gap:15px;
+}
+
+input, textarea{
+    padding:12px;
+    border:1px solid #ccc;
+    border-radius:4px;
+    font-size:14px;
+}
+
+button{
+    background:var(--primary);
+    color:white;
+    padding:12px;
+    border:none;
+    border-radius:4px;
+    font-weight:600;
+    cursor:pointer;
+}
+
+button:hover{
+    background:var(--primary-dark);
+}
+
+footer{
+    background:#083B2F;
+    color:white;
+    text-align:center;
+    padding:20px;
+    font-size:14px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">
+        <img src="img/logo-estero.png" alt="Logo Estero">
+        <strong>Constructora Estero</strong>
+    </div>
+    <nav>
+        <a href="#nosotros">Nosotros</a>
+        <a href="#estructura">Estructura</a>
+        <a href="#experiencia">Experiencia</a>
+        <a href="#contacto">Contacto</a>
+    </nav>
+</header>
+
+<section class="hero">
+    <h2>Construcción y Servicios Industriales</h2>
+    <p>Ingeniería de Precisión | Seguridad Certificada | Tasa 0 Accidentes</p>
+    <a href="#contacto" class="btn">Solicitar Información</a>
+</section>
+
+<section id="nosotros">
+    <h3>Quiénes Somos</h3>
+    <p>En Estero, la solidez de nuestras obras nace de la experiencia de nuestra gente. Somos una constructora especializada en servicios industriales, formada por un equipo multidisciplinario de profesionales con más de 30 años de trayectoria liderando proyectos críticos en los sectores más exigentes del país.
+</p>
+</section>
+
+<section id="estructura">
+    <h3>Estructura Organizacional</h3>
+
+    <div class="org-chart">
+
+        <ul>
+            <li>
+                <div class="node">Gerente General</div>
+                <ul>
+                    <li>
+                        <div class="node">Unidad de Prevención de Riesgos</div>
+                        <ul>
+                            <li>
+                                <div class="node">ITO</div>
+                                <ul>
+                                    <li>
+                                        <div class="node">Supervisor y Calidad</div>
+                                        <ul>
+                                            <li>
+                                                <div class="node">Cuadrilla</div>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <div class="node">Administración y Finanzas</div>
+                            </li>
+                            <li>
+                                <div class="node">Gestión de Subcontratos</div>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+
+    </div>
+</section>
+
+
+<section id="experiencia">
+    <h3>Experiencia y Alcance Operativo</h3>
+    <div class="gallery">
+        <img src="img/obra1.png">
+        <img src="img/obra2.png">
+        <img src="img/obra3.png">
+        <img src="img/obra4.png">
+    </div>
+</section>
+
+<section id="contacto">
+    <h3>Contacto</h3>
+
+    <!-- Cambia TU_CORREO por tu correo real -->
+    <form action="https://formsubmit.co/erojas.estero@gmail.com" method="POST">
+        <input type="text" name="nombre" placeholder="Nombre" required>
+        <input type="email" name="email" placeholder="Correo electrónico" required>
+        <textarea name="mensaje" rows="5" placeholder="Mensaje" required></textarea>
+        <button type="submit">Enviar Mensaje</button>
+
+        <input type="hidden" name="_captcha" value="false">
+    </form>
+
+</section>
+
+<footer>
+    © 2026 Constructora Estero. Todos los derechos reservados.
+</footer>
+
+</body>
+</html>
+
