@@ -6,7 +6,93 @@
 <title>Constructora Estero | Construcción y Servicios Industriales</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+/* ===== ORGANIGRAMA PROFESIONAL REAL ===== */
 
+.org-chart ul {
+    padding-top: 20px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+
+.org-chart li {
+    list-style-type: none;
+    text-align: center;
+    position: relative;
+    padding: 20px 15px 0 15px;
+}
+
+/* Líneas horizontales */
+.org-chart li::before,
+.org-chart li::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 50%;
+    border-top: 2px solid var(--primary);
+    width: 50%;
+    height: 20px;
+}
+
+.org-chart li::after {
+    right: auto;
+    left: 50%;
+    border-left: 2px solid var(--primary);
+}
+
+/* Elimina líneas innecesarias */
+.org-chart li:only-child::after,
+.org-chart li:only-child::before {
+    display: none;
+}
+
+.org-chart li:only-child {
+    padding-top: 0;
+}
+
+.org-chart li:first-child::before,
+.org-chart li:last-child::after {
+    border: 0 none;
+}
+
+.org-chart li:last-child::before {
+    border-right: 2px solid var(--primary);
+}
+
+.org-chart li:first-child::after {
+    border-radius: 5px 0 0 0;
+}
+
+/* Línea vertical */
+.org-chart ul ul::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    border-left: 2px solid var(--primary);
+    width: 0;
+    height: 20px;
+}
+
+/* Nodos */
+.node {
+    background: var(--primary);
+    color: white;
+    padding: 12px 25px;
+    border-radius: 8px;
+    display: inline-block;
+    font-weight: 600;
+    min-width: 200px;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.08);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .org-chart ul {
+        flex-direction: column;
+        align-items: center;
+    }
+}
 <style>
 
 :root{
@@ -126,58 +212,43 @@ section h3{
     border-top:5px solid var(--primary);
 }
 
-/* ORGANIGRAMA */
+<section id="estructura">
+    <h3 style="text-align:center;">Estructura Organizacional</h3>
 
-.org-container{
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    margin-top:50px;
-}
-
-.org-box{
-    background:var(--primary);
-    color:white;
-    padding:15px 30px;
-    border-radius:8px;
-    font-weight:600;
-    margin:15px 0;
-    box-shadow:0 6px 15px rgba(0,0,0,0.08);
-    min-width:220px;
-    text-align:center;
-}
-
-.org-box.wide{
-    min-width:320px;
-}
-
-.org-line{
-    width:3px;
-    height:40px;
-    background:var(--primary);
-}
-
-.org-connector{
-    width:60%;
-    height:3px;
-    background:var(--primary);
-    margin:20px 0;
-}
-
-.org-row{
-    display:flex;
-    gap:40px;
-    justify-content:center;
-    flex-wrap:wrap;
-}
-
-.org-sub{
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    margin-top:20px;
-}
-
+    <div class="org-chart">
+        <ul>
+            <li>
+                <div class="node">Gerente General</div>
+                <ul>
+                    <li>
+                        <div class="node">Unidad de Prevención de Riesgos</div>
+                        <ul>
+                            <li>
+                                <div class="node">ITO</div>
+                                <ul>
+                                    <li>
+                                        <div class="node">Supervisor y Calidad</div>
+                                        <ul>
+                                            <li>
+                                                <div class="node">Cuadrilla</div>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <div class="node">Administración y Finanzas</div>
+                            </li>
+                            <li>
+                                <div class="node">Gestión de Subcontratos</div>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</section>
 /* GALERÍA */
 
 .gallery{
