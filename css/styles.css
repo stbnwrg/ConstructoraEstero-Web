@@ -21,7 +21,8 @@ body{
 }
 
 .brand img{
-    height:55px;       /* LOGO CONTROLADO */
+    height:45px;
+    max-height:45px;
     width:auto;
     object-fit:contain;
     margin-right:15px;
