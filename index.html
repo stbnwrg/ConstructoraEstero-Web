@@ -34,9 +34,9 @@
     <div class="hero-overlay"></div>
 
     <div class="hero-text">
-        <h2>Construcción Industrial y Domiciliaria en la Región del Biobío</h2>
-        <p>Confianza, seguridad y sostenibilidad en cada proyecto.</p>
-    </div>
+    <h2 id="hero-title">Soluciones constructivas para industria y hogar</h2>
+    <p>Región del Biobío, Chile</p>
+</div>
 
 </section>
 
@@ -89,6 +89,26 @@ function toggleMenu(){
     document.querySelector(".nav").classList.toggle("active");
 }
 </script>
+<script>
+const phrases = [
+    "Construimos futuro con precisión y sostenibilidad",
+    "Confianza en proyectos domiciliarios premium",
+    "Seguridad y cumplimiento en servicios industriales"
+];
 
+let phraseIndex = 0;
+const heroTitle = document.getElementById("hero-title");
+
+setInterval(() => {
+    phraseIndex = (phraseIndex + 1) % phrases.length;
+    heroTitle.style.opacity = 0;
+
+    setTimeout(() => {
+        heroTitle.textContent = phrases[phraseIndex];
+        heroTitle.style.opacity = 1;
+    }, 500);
+
+}, 4000);
+</script>
 </body>
 </html>

@@ -97,6 +97,7 @@ body{
     font-size:38px;
     max-width:800px;
     margin:auto;
+    transition:opacity 0.5s ease-in-out;
 }
 
 .hero-text p{
