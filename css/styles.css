@@ -21,20 +21,22 @@ body{
 }
 
 .brand img{
-    height:70px;
+    height:55px;       /* LOGO CONTROLADO */
+    width:auto;
+    object-fit:contain;
     margin-right:15px;
 }
 
 .brand-text h1{
     margin:0;
-    font-size:22px;
+    font-size:24px;
     color:#0F6B53;
 }
 
 .brand-text p{
     margin:0;
     font-size:13px;
-    color:#555;
+    color:#666;
 }
 
 .nav a{
@@ -50,59 +52,53 @@ body{
     font-size:22px;
 }
 
-/* HERO */
+/* HERO CON SLIDER SOLO CSS */
 
 .hero{
     position:relative;
     height:80vh;
-    overflow:hidden;
-}
-
-.slides{
-    position:absolute;
-    width:100%;
-    height:100%;
-}
-
-.slide{
-    position:absolute;
-    width:100%;
-    height:100%;
     background-size:cover;
     background-position:center;
-    opacity:0;
-    transition:opacity 1s ease-in-out;
+    animation:slider 30s infinite;
 }
 
-.slide.active{
-    opacity:1;
+/* ANIMACIÓN DE FONDOS */
+
+@keyframes slider{
+    0%   { background-image:url('/img/hero1.jpg'); }
+    16%  { background-image:url('/img/hero2.jpg'); }
+    32%  { background-image:url('/img/hero3.jpg'); }
+    48%  { background-image:url('/img/hero4.jpg'); }
+    64%  { background-image:url('/img/hero5.jpg'); }
+    80%  { background-image:url('/img/hero6.jpg'); }
+    100% { background-image:url('/img/hero1.jpg'); }
 }
 
-.overlay{
+.hero-overlay{
     position:absolute;
     width:100%;
     height:100%;
     background:rgba(15,107,83,0.65);
-    z-index:1;
 }
 
-.hero-content{
-    position:relative;
-    z-index:2;
-    color:white;
-    text-align:center;
+.hero-text{
+    position:absolute;
     top:50%;
-    transform:translateY(-50%);
-    padding:0 20px;
+    left:50%;
+    transform:translate(-50%, -50%);
+    text-align:center;
+    color:white;
+    z-index:2;
+    width:90%;
 }
 
-.hero-content h2{
-    font-size:40px;
+.hero-text h2{
+    font-size:38px;
     max-width:800px;
     margin:auto;
 }
 
-.hero-content p{
+.hero-text p{
     margin-top:20px;
     font-size:18px;
 }
@@ -196,8 +192,8 @@ footer{
         display:block;
     }
 
-    .hero-content h2{
-        font-size:26px;
+    .hero-text h2{
+        font-size:24px;
     }
 
     .hero{
@@ -205,6 +201,6 @@ footer{
     }
 
     .brand img{
-        height:50px;
+        height:45px;
     }
 }
