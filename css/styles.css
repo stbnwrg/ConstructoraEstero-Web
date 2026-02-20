@@ -233,3 +233,81 @@ footer{
     stroke:#0F6B53;
     stroke-width:3;
 }
+/* ========================= */
+/* ORGANIGRAMA PROFESIONAL */
+/* ========================= */
+
+.estructura-section{
+    background:#f4f6f5;
+}
+
+.org-container{
+    margin-top:60px;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+}
+
+.org-level{
+    display:flex;
+    justify-content:center;
+    gap:60px; /* ESPACIADO ENTRE CAJAS */
+    flex-wrap:wrap;
+}
+
+.space-level{
+    margin-top:30px;
+}
+
+.org-box{
+    background:#0F6B53;
+    color:white;
+    padding:18px 28px;
+    border-radius:8px;
+    font-weight:600;
+    min-width:220px;
+    text-align:center;
+    box-shadow:0 6px 16px rgba(0,0,0,0.1);
+    transition:0.3s ease;
+}
+
+.org-box:hover{
+    transform:translateY(-5px);
+    box-shadow:0 10px 25px rgba(0,0,0,0.15);
+}
+
+.org-line.vertical{
+    width:3px;
+    height:40px;
+    background:#0F6B53;
+    margin:10px 0;
+}
+
+/* Rama dependiente del ITO */
+.org-branch{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    margin-top:20px;
+}
+
+/* ========================= */
+/* RESPONSIVE */
+/* ========================= */
+
+@media(max-width:768px){
+
+    .org-level{
+        flex-direction:column;
+        gap:25px;
+    }
+
+    .org-box{
+        width:90%;
+        max-width:320px;
+    }
+
+    .org-line.vertical{
+        height:25px;
+    }
+}

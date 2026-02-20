@@ -68,48 +68,34 @@
 
     </div>
 </section>
-<section id="estructura" class="section bg-light">
+<section id="estructura" class="section estructura-section">
     <h2>Estructura Organizacional</h2>
 
-    <div class="org-wrapper">
-        <svg viewBox="0 0 1000 500" class="org-chart">
+    <div class="org-container">
 
-            <!-- Líneas principales -->
-            <line x1="500" y1="90" x2="500" y2="140" />
-            <line x1="200" y1="140" x2="800" y2="140" />
+        <!-- NIVEL 1 -->
+        <div class="org-level">
+            <div class="org-box">Gerente General</div>
+        </div>
 
-            <!-- Línea ITO hacia abajo -->
-            <line x1="500" y1="140" x2="500" y2="220" />
-            <line x1="500" y1="260" x2="500" y2="320" />
-            <line x1="500" y1="360" x2="500" y2="420" />
+        <div class="org-line vertical"></div>
 
-            <!-- Gerente General -->
-            <rect x="350" y="40" width="300" height="50" rx="8" />
-            <text x="500" y="65" text-anchor="middle">Gerente General</text>
+        <!-- NIVEL 2 -->
+        <div class="org-level space-level">
+            <div class="org-box">Unidad de Prevención de Riesgos</div>
+            <div class="org-box">ITO</div>
+            <div class="org-box">Administración y Finanzas</div>
+            <div class="org-box">Gestión de Subcontratos</div>
+        </div>
 
-            <!-- Nivel 2 -->
-            <rect x="50" y="140" width="300" height="50" rx="8" />
-            <text x="200" y="165" text-anchor="middle">Unidad de Prevención de Riesgos</text>
+        <!-- Rama ITO -->
+        <div class="org-branch">
+            <div class="org-line vertical"></div>
+            <div class="org-box">Supervisor y Calidad</div>
+            <div class="org-line vertical"></div>
+            <div class="org-box">Cuadrilla</div>
+        </div>
 
-            <rect x="350" y="140" width="300" height="50" rx="8" />
-            <text x="500" y="165" text-anchor="middle">ITO</text>
-
-            <rect x="650" y="140" width="300" height="50" rx="8" />
-            <text x="800" y="165" text-anchor="middle">Administración y Finanzas</text>
-
-            <!-- Gestión Subcontratos -->
-            <rect x="650" y="220" width="300" height="50" rx="8" />
-            <text x="800" y="245" text-anchor="middle">Gestión de Subcontratos</text>
-
-            <!-- Supervisor -->
-            <rect x="350" y="220" width="300" height="50" rx="8" />
-            <text x="500" y="245" text-anchor="middle">Supervisor y Calidad</text>
-
-            <!-- Cuadrilla -->
-            <rect x="350" y="320" width="300" height="50" rx="8" />
-            <text x="500" y="345" text-anchor="middle">Cuadrilla</text>
-
-        </svg>
     </div>
 </section>
 <section id="contacto" class="section">
