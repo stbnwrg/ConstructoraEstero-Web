@@ -246,85 +246,177 @@ footer{
     </div>
 </section>
 
-<section id="estructura">
-    <h2 style="text-align:center; margin-bottom:60px; color:#0A4E3E;">
-        Estructura Organizacional
-    </h2>
+<section id="estructura" style="padding:100px 8%; background:#f4f6f5;">
 
-    <div style="display:flex; justify-content:center;">
-        <svg viewBox="0 0 1200 800" width="100%" style="max-width:1100px;">
+<style>
+.org-container{
+    display:flex;
+    justify-content:center;
+}
 
-            <!-- ===================== -->
-            <!-- LÍNEAS DESDE GERENCIA -->
-            <!-- ===================== -->
+.org-svg{
+    width:100%;
+    max-width:1200px;
+}
 
-            <!-- Línea vertical principal -->
-            <line x1="600" y1="120" x2="600" y2="200" stroke="#0F6B53" stroke-width="3"/>
+.org-title{
+    text-align:center;
+    font-size:32px;
+    color:#0A4E3E;
+    margin-bottom:60px;
+    font-weight:700;
+}
 
-            <!-- Línea horizontal hacia las 4 áreas -->
-            <line x1="150" y1="200" x2="1050" y2="200" stroke="#0F6B53" stroke-width="3"/>
+/* MOBILE VERSION */
+@media(max-width:768px){
 
-            <!-- Bajadas individuales -->
-            <line x1="150" y1="200" x2="150" y2="250" stroke="#0F6B53" stroke-width="3"/>
-            <line x1="400" y1="200" x2="400" y2="250" stroke="#0F6B53" stroke-width="3"/>
-            <line x1="700" y1="200" x2="700" y2="250" stroke="#0F6B53" stroke-width="3"/>
-            <line x1="1000" y1="200" x2="1000" y2="250" stroke="#0F6B53" stroke-width="3"/>
+    .org-svg{
+        display:none;
+    }
 
-            <!-- Línea vertical bajo ITO -->
-            <line x1="400" y1="320" x2="400" y2="370" stroke="#0F6B53" stroke-width="3"/>
+    .org-mobile{
+        display:block;
+    }
 
-            <!-- Línea vertical bajo Supervisor -->
-            <line x1="400" y1="440" x2="400" y2="490" stroke="#0F6B53" stroke-width="3"/>
+    .org-mobile .box{
+        background:#0F6B53;
+        color:white;
+        padding:18px;
+        border-radius:10px;
+        margin-bottom:25px;
+        text-align:center;
+        font-weight:600;
+    }
 
+    .org-mobile .indent{
+        margin-left:25px;
+    }
 
-            <!-- ===================== -->
-            <!-- CAJAS -->
-            <!-- ===================== -->
+}
 
-            <!-- Gerente -->
-            <rect x="450" y="50" width="300" height="70" rx="10" fill="#0F6B53"/>
-            <text x="600" y="95" text-anchor="middle" fill="white" font-size="18" font-weight="600">
-                Gerente General
-            </text>
+@media(min-width:769px){
+    .org-mobile{
+        display:none;
+    }
+}
+</style>
 
-            <!-- Prevención -->
-            <rect x="0" y="250" width="300" height="70" rx="10" fill="#0F6B53"/>
-            <text x="150" y="295" text-anchor="middle" fill="white" font-size="16" font-weight="600">
-                Unidad de Prevención de Riesgos
-            </text>
+<h2 class="org-title">Estructura Organizacional</h2>
 
-            <!-- ITO -->
-            <rect x="250" y="250" width="300" height="70" rx="10" fill="#0F6B53"/>
-            <text x="400" y="295" text-anchor="middle" fill="white" font-size="16" font-weight="600">
-                ITO
-            </text>
+<div class="org-container">
 
-            <!-- Administración -->
-            <rect x="550" y="250" width="300" height="70" rx="10" fill="#0F6B53"/>
-            <text x="700" y="295" text-anchor="middle" fill="white" font-size="16" font-weight="600">
-                Administración y Finanzas
-            </text>
+<svg class="org-svg" viewBox="0 0 1300 850">
 
-            <!-- Subcontratos -->
-            <rect x="850" y="250" width="300" height="70" rx="10" fill="#0F6B53"/>
-            <text x="1000" y="295" text-anchor="middle" fill="white" font-size="16" font-weight="600">
-                Gestión de Subcontratos
-            </text>
+<!-- ================= ICONOS ================= -->
 
-            <!-- Supervisor -->
-            <rect x="250" y="370" width="300" height="70" rx="10" fill="#0F6B53"/>
-            <text x="400" y="415" text-anchor="middle" fill="white" font-size="16" font-weight="600">
-                Supervisor y Calidad
-            </text>
+<defs>
+<g id="icon-manager">
+<circle cx="20" cy="20" r="18" fill="white"/>
+<path d="M20 12 a6 6 0 1 1 0.1 0" stroke="#0F6B53" stroke-width="2" fill="none"/>
+<rect x="12" y="22" width="16" height="10" rx="3" fill="#0F6B53"/>
+</g>
 
-            <!-- Cuadrilla -->
-            <rect x="250" y="490" width="300" height="70" rx="10" fill="#0F6B53"/>
-            <text x="400" y="535" text-anchor="middle" fill="white" font-size="16" font-weight="600">
-                Cuadrilla
-            </text>
+<g id="icon-gear">
+<circle cx="20" cy="20" r="18" fill="white"/>
+<circle cx="20" cy="20" r="6" fill="#0F6B53"/>
+</g>
 
-        </svg>
-    </div>
+<g id="icon-tools">
+<circle cx="20" cy="20" r="18" fill="white"/>
+<path d="M12 28 L28 12" stroke="#0F6B53" stroke-width="3"/>
+<path d="M12 12 L28 28" stroke="#0F6B53" stroke-width="3"/>
+</g>
+
+<g id="icon-shield">
+<circle cx="20" cy="20" r="18" fill="white"/>
+<path d="M20 10 L30 15 L30 22 C30 28 25 32 20 34 C15 32 10 28 10 22 L10 15 Z" fill="#0F6B53"/>
+</g>
+
+<g id="icon-team">
+<circle cx="20" cy="20" r="18" fill="white"/>
+<circle cx="16" cy="18" r="4" fill="#0F6B53"/>
+<circle cx="24" cy="18" r="4" fill="#0F6B53"/>
+</g>
+</defs>
+
+<!-- ================= LÍNEAS ================= -->
+
+<line x1="650" y1="140" x2="650" y2="220" stroke="#0F6B53" stroke-width="3"/>
+<line x1="150" y1="220" x2="1150" y2="220" stroke="#0F6B53" stroke-width="3"/>
+
+<line x1="150" y1="220" x2="150" y2="260" stroke="#0F6B53" stroke-width="3"/>
+<line x1="450" y1="220" x2="450" y2="260" stroke="#0F6B53" stroke-width="3"/>
+<line x1="850" y1="220" x2="850" y2="260" stroke="#0F6B53" stroke-width="3"/>
+<line x1="1150" y1="220" x2="1150" y2="260" stroke="#0F6B53" stroke-width="3"/>
+
+<line x1="450" y1="330" x2="450" y2="380" stroke="#0F6B53" stroke-width="3"/>
+<line x1="450" y1="450" x2="450" y2="500" stroke="#0F6B53" stroke-width="3"/>
+
+<!-- ================= CAJAS ================= -->
+
+<!-- GERENTE -->
+<rect x="500" y="60" width="300" height="80" rx="14" fill="#0F6B53"/>
+<use href="#icon-manager" x="510" y="70"/>
+<text x="650" y="110" text-anchor="middle" fill="white" font-size="18" font-weight="600">
+Gerente General
+</text>
+
+<!-- PREVENCIÓN -->
+<rect x="0" y="260" width="300" height="80" rx="14" fill="#0F6B53"/>
+<use href="#icon-shield" x="10" y="270"/>
+<text x="150" y="310" text-anchor="middle" fill="white" font-size="16" font-weight="600">
+Unidad de Prevención
+</text>
+
+<!-- ITO -->
+<rect x="300" y="260" width="300" height="80" rx="14" fill="#0F6B53"/>
+<use href="#icon-gear" x="310" y="270"/>
+<text x="450" y="310" text-anchor="middle" fill="white" font-size="16" font-weight="600">
+ITO
+</text>
+
+<!-- ADMIN -->
+<rect x="700" y="260" width="300" height="80" rx="14" fill="#0F6B53"/>
+<use href="#icon-tools" x="710" y="270"/>
+<text x="850" y="310" text-anchor="middle" fill="white" font-size="16" font-weight="600">
+Administración y Finanzas
+</text>
+
+<!-- SUBCONTRATOS -->
+<rect x="1000" y="260" width="300" height="80" rx="14" fill="#0F6B53"/>
+<use href="#icon-team" x="1010" y="270"/>
+<text x="1150" y="310" text-anchor="middle" fill="white" font-size="16" font-weight="600">
+Gestión de Subcontratos
+</text>
+
+<!-- SUPERVISOR -->
+<rect x="300" y="380" width="300" height="80" rx="14" fill="#0F6B53"/>
+<use href="#icon-manager" x="310" y="390"/>
+<text x="450" y="430" text-anchor="middle" fill="white" font-size="16" font-weight="600">
+Supervisor y Calidad
+</text>
+
+<!-- CUADRILLA -->
+<rect x="300" y="500" width="300" height="80" rx="14" fill="#0F6B53"/>
+<use href="#icon-team" x="310" y="510"/>
+<text x="450" y="550" text-anchor="middle" fill="white" font-size="16" font-weight="600">
+Cuadrilla
+</text>
+
+</svg>
+</div>
+
+<!-- MOBILE VERSION -->
+<div class="org-mobile">
+    <div class="box">Gerente General</div>
+    <div class="box">Unidad de Prevención de Riesgos</div>
+    <div class="box">ITO</div>
+    <div class="box indent">Supervisor y Calidad</div>
+    <div class="box indent">Cuadrilla</div>
+    <div class="box">Administración y Finanzas</div>
+    <div class="box">Gestión de Subcontratos</div>
+</div>
+
 </section>
 
 <section id="experiencia">
