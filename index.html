@@ -11,12 +11,17 @@
 <body>
 
 <header class="header">
-    <div class="logo">Constructora Estero</div>
+    <div class="brand">
+        <img src="img/logo-estero.png" alt="Constructora Estero">
+        <div class="brand-text">
+            <h1>Constructora Estero</h1>
+            <p>Liderando la construcción sostenible desde el sur</p>
+        </div>
+    </div>
 
     <nav class="nav">
         <a href="#nosotros">Nosotros</a>
-        <a href="#lineas">Líneas de Negocio</a>
-        <a href="#estructura">Estructura</a>
+        <a href="#lineas">Líneas</a>
         <a href="#contacto">Contacto</a>
     </nav>
 
@@ -25,34 +30,38 @@
 
 <!-- HERO SLIDER -->
 <section class="hero">
+
+    <div class="overlay"></div>
+
     <div class="slides">
-        <div class="slide active">
-            <h1>Liderando la construcción sostenible desde el sur de Chile</h1>
-        </div>
-        <div class="slide">
-            <h1>Confianza en proyectos domiciliarios premium</h1>
-        </div>
-        <div class="slide">
-            <h1>Seguridad y cumplimiento en servicios industriales</h1>
-        </div>
+
+        <div class="slide active" style="background-image:url('img/hero1.jpg')"></div>
+        <div class="slide" style="background-image:url('img/hero2.jpg')"></div>
+        <div class="slide" style="background-image:url('img/hero3.jpg')"></div>
+        <div class="slide" style="background-image:url('img/hero4.jpg')"></div>
+        <div class="slide" style="background-image:url('img/hero5.jpg')"></div>
+        <div class="slide" style="background-image:url('img/hero6.jpg')"></div>
+
     </div>
+
+    <div class="hero-content">
+        <h2>Construcción Industrial y Domiciliaria en la Región del Biobío</h2>
+        <p>Confianza, seguridad y sostenibilidad en cada proyecto.</p>
+    </div>
+
 </section>
 
 <!-- NOSOTROS -->
 <section id="nosotros" class="section">
     <h2>Quiénes Somos</h2>
     <p>
-        Fundada en 2023, Constructora Estero surge como la consolidación
-        de más de 30 años de experiencia en construcción domiciliaria
-        y gestión técnica de proyectos en la Región del Biobío.
-    </p>
-    <p>
-        Combinamos innovación, sostenibilidad y cumplimiento operativo,
-        ofreciendo soluciones tanto en el ámbito industrial como residencial.
+        Fundada en 2023, Constructora Estero consolida más de 30 años
+        de experiencia en construcción domiciliaria y servicios industriales
+        en la Región del Biobío.
     </p>
 </section>
 
-<!-- LÍNEAS DE NEGOCIO -->
+<!-- LINEAS -->
 <section id="lineas" class="section bg-light">
     <h2>Nuestras Líneas de Negocio</h2>
 
@@ -60,39 +69,21 @@
 
         <div class="card">
             <h3>Servicios Industriales</h3>
-            <p>Obras civiles, mantenimiento industrial y continuidad operacional.</p>
-            <a href="servicios-industriales/" class="btn">Ver Más</a>
+            <p>Seguridad, cumplimiento y continuidad operacional.</p>
+            <a href="servicios-industriales/" class="btn">Ver Línea Industrial</a>
         </div>
 
         <div class="card">
             <h3>Construcción Domiciliaria</h3>
-            <p>Proyectos llave en mano, ampliaciones y viviendas premium.</p>
-            <a href="domiciliaria/" class="btn">Ver Más</a>
+            <p>Proyectos llave en mano para clientes medio alto y premium.</p>
+            <a href="domiciliaria/" class="btn">Ver Línea Domiciliaria</a>
         </div>
 
-    </div>
-</section>
-
-<!-- INDICADORES -->
-<section class="section">
-    <div class="indicators">
-        <div>
-            <h3>500+</h3>
-            <p>Proyectos Domiciliarios</p>
-        </div>
-        <div>
-            <h3>30+</h3>
-            <p>Años de Experiencia</p>
-        </div>
-        <div>
-            <h3>3</h3>
-            <p>Años en Industria</p>
-        </div>
     </div>
 </section>
 
 <!-- CONTACTO -->
-<section id="contacto" class="section bg-light">
+<section id="contacto" class="section">
     <h2>Contacto</h2>
     <form action="https://formsubmit.co/erojas.estero@gmail.com" method="POST">
         <input type="text" name="nombre" placeholder="Nombre" required>

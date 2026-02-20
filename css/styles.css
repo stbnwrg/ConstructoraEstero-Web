@@ -3,6 +3,8 @@ body{
     font-family:Arial, sans-serif;
 }
 
+/* HEADER */
+
 .header{
     display:flex;
     justify-content:space-between;
@@ -10,40 +12,102 @@ body{
     padding:15px 8%;
     background:#ffffff;
     border-bottom:1px solid #eee;
+    position:relative;
 }
 
-.logo{
-    font-weight:bold;
+.brand{
+    display:flex;
+    align-items:center;
+}
+
+.brand img{
+    height:70px;
+    margin-right:15px;
+}
+
+.brand-text h1{
+    margin:0;
+    font-size:22px;
+    color:#0F6B53;
+}
+
+.brand-text p{
+    margin:0;
+    font-size:13px;
+    color:#555;
 }
 
 .nav a{
     margin-left:20px;
     text-decoration:none;
     color:#0F6B53;
+    font-weight:500;
 }
 
 .menu-toggle{
     display:none;
     cursor:pointer;
+    font-size:22px;
 }
 
+/* HERO */
+
 .hero{
-    height:70vh;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    text-align:center;
-    background:#0F6B53;
-    color:white;
+    position:relative;
+    height:80vh;
+    overflow:hidden;
+}
+
+.slides{
+    position:absolute;
+    width:100%;
+    height:100%;
 }
 
 .slide{
-    display:none;
+    position:absolute;
+    width:100%;
+    height:100%;
+    background-size:cover;
+    background-position:center;
+    opacity:0;
+    transition:opacity 1s ease-in-out;
 }
 
 .slide.active{
-    display:block;
+    opacity:1;
 }
+
+.overlay{
+    position:absolute;
+    width:100%;
+    height:100%;
+    background:rgba(15,107,83,0.65);
+    z-index:1;
+}
+
+.hero-content{
+    position:relative;
+    z-index:2;
+    color:white;
+    text-align:center;
+    top:50%;
+    transform:translateY(-50%);
+    padding:0 20px;
+}
+
+.hero-content h2{
+    font-size:40px;
+    max-width:800px;
+    margin:auto;
+}
+
+.hero-content p{
+    margin-top:20px;
+    font-size:18px;
+}
+
+/* SECTIONS */
 
 .section{
     padding:80px 8%;
@@ -77,13 +141,6 @@ body{
     color:white;
     text-decoration:none;
     border-radius:5px;
-}
-
-.indicators{
-    display:flex;
-    justify-content:center;
-    gap:50px;
-    flex-wrap:wrap;
 }
 
 form{
@@ -124,7 +181,7 @@ footer{
         display:none;
         flex-direction:column;
         position:absolute;
-        top:60px;
+        top:100%;
         right:20px;
         background:white;
         padding:20px;
@@ -139,7 +196,15 @@ footer{
         display:block;
     }
 
+    .hero-content h2{
+        font-size:26px;
+    }
+
     .hero{
-        height:50vh;
+        height:60vh;
+    }
+
+    .brand img{
+        height:50px;
     }
 }
