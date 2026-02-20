@@ -3,8 +3,6 @@ body{
     font-family:Arial, sans-serif;
 }
 
-/* HEADER */
-
 .header{
     display:flex;
     justify-content:space-between;
@@ -21,8 +19,7 @@ body{
 }
 
 .brand img{
-    height:45px;
-    max-height:45px;
+    height:55px;
     width:auto;
     object-fit:contain;
     margin-right:15px;
@@ -30,14 +27,14 @@ body{
 
 .brand-text h1{
     margin:0;
-    font-size:24px;
+    font-size:26px;
     color:#0F6B53;
 }
 
 .brand-text p{
     margin:0;
-    font-size:13px;
-    color:#666;
+    font-size:14px;
+    color:#555;
 }
 
 .nav a{
@@ -53,92 +50,61 @@ body{
     font-size:22px;
 }
 
-/* HERO CON SLIDER SOLO CSS */
-
 .hero{
     position:relative;
     height:80vh;
-    background-size:cover;
-    background-position:center;
-    animation:slider 30s infinite;
+    overflow:hidden;
 }
 
-/* ANIMACIÓN DE FONDOS */
-
-@keyframes slider{
-    0%   { background-image:url('/img/hero1.jpg'); }
-    16%  { background-image:url('/img/hero2.jpg'); }
-    32%  { background-image:url('/img/hero3.jpg'); }
-    48%  { background-image:url('/img/hero4.jpg'); }
-    64%  { background-image:url('/img/hero5.jpg'); }
-    80%  { background-image:url('/img/hero6.jpg'); }
-    100% { background-image:url('/img/hero1.jpg'); }
-}
-
-.hero-overlay{
+.slides{
     position:absolute;
     width:100%;
     height:100%;
-    background:rgba(15,107,83,0.65);
 }
 
-.hero-text{
+.slide{
     position:absolute;
-    top:50%;
-    left:50%;
-    transform:translate(-50%, -50%);
-    text-align:center;
-    color:white;
+    width:100%;
+    height:100%;
+    background-size:cover;
+    background-position:center;
+    opacity:0;
+    transition:opacity 1s ease-in-out;
+}
+
+.slide.active{
+    opacity:1;
+}
+
+.overlay{
+    position:absolute;
+    width:100%;
+    height:100%;
+    background:rgba(15,107,83,0.6);
+}
+
+.hero-content{
+    position:relative;
     z-index:2;
-    width:90%;
+    color:white;
+    text-align:center;
+    top:50%;
+    transform:translateY(-50%);
+    padding:0 20px;
 }
 
-.hero-text h2{
-    font-size:38px;
-    max-width:800px;
-    margin:auto;
-    transition:opacity 0.5s ease-in-out;
+.hero-content h2{
+    font-size:42px;
+    transition:opacity 0.4s ease;
 }
-
-.hero-text p{
-    margin-top:20px;
-    font-size:18px;
-}
-
-/* SECTIONS */
 
 .section{
-    padding:80px 8%;
+    padding:100px 8%;
     text-align:center;
 }
 
 .bg-light{
     background:#f4f6f5;
-}
-
-.cards{
-    display:flex;
-    gap:30px;
-    justify-content:center;
-    flex-wrap:wrap;
-}
-
-.card{
-    background:white;
-    padding:30px;
-    border-radius:8px;
-    box-shadow:0 5px 15px rgba(0,0,0,0.05);
-    width:300px;
-}
-
-.btn{
-    display:inline-block;
-    margin-top:20px;
-    padding:10px 20px;
-    background:#0F6B53;
-    color:white;
-    text-decoration:none;
-    border-radius:5px;
 }
 
 form{
@@ -171,7 +137,11 @@ footer{
     padding:20px;
 }
 
-/* MOBILE */
+.org-wrapper{
+    max-width:1100px;
+    margin:auto;
+    overflow-x:auto;
+}
 
 @media(max-width:768px){
 
@@ -194,120 +164,11 @@ footer{
         display:block;
     }
 
-    .hero-text h2{
-        font-size:24px;
+    .hero-content h2{
+        font-size:26px;
     }
 
     .hero{
         height:60vh;
-    }
-
-    .brand img{
-        height:45px;
-    }
-}
-.org-wrapper{
-    overflow-x:auto;
-}
-
-.org-chart{
-    width:100%;
-    max-width:1000px;
-    display:block;
-    margin:auto;
-}
-
-.org-chart rect{
-    fill:#0F6B53;
-    filter:drop-shadow(0 4px 8px rgba(0,0,0,0.15));
-}
-
-.org-chart text{
-    fill:white;
-    font-size:15px;
-    font-weight:500;
-    dominant-baseline:middle;
-}
-
-.org-chart line{
-    stroke:#0F6B53;
-    stroke-width:3;
-}
-/* ========================= */
-/* ORGANIGRAMA PROFESIONAL */
-/* ========================= */
-
-.estructura-section{
-    background:#f4f6f5;
-}
-
-.org-container{
-    margin-top:60px;
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-}
-
-.org-level{
-    display:flex;
-    justify-content:center;
-    gap:60px; /* ESPACIADO ENTRE CAJAS */
-    flex-wrap:wrap;
-}
-
-.space-level{
-    margin-top:30px;
-}
-
-.org-box{
-    background:#0F6B53;
-    color:white;
-    padding:18px 28px;
-    border-radius:8px;
-    font-weight:600;
-    min-width:220px;
-    text-align:center;
-    box-shadow:0 6px 16px rgba(0,0,0,0.1);
-    transition:0.3s ease;
-}
-
-.org-box:hover{
-    transform:translateY(-5px);
-    box-shadow:0 10px 25px rgba(0,0,0,0.15);
-}
-
-.org-line.vertical{
-    width:3px;
-    height:40px;
-    background:#0F6B53;
-    margin:10px 0;
-}
-
-/* Rama dependiente del ITO */
-.org-branch{
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    margin-top:20px;
-}
-
-/* ========================= */
-/* RESPONSIVE */
-/* ========================= */
-
-@media(max-width:768px){
-
-    .org-level{
-        flex-direction:column;
-        gap:25px;
-    }
-
-    .org-box{
-        width:90%;
-        max-width:320px;
-    }
-
-    .org-line.vertical{
-        height:25px;
     }
 }
