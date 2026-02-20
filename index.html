@@ -8,90 +8,13 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <style>
+
 :root{
     --primary:#0F6B53;
     --primary-dark:#0A4E3E;
     --light:#F4F6F5;
     --dark:#1f1f1f;
     --white:#ffffff;
-}
-/* ORGANIGRAMA PROFESIONAL */
-
-.org-chart ul {
-    padding-top: 20px;
-    position: relative;
-    display: flex;
-    justify-content: center;
-}
-
-.org-chart li {
-    list-style-type: none;
-    text-align: center;
-    position: relative;
-    padding: 20px 10px 0 10px;
-}
-
-/* Líneas verticales */
-.org-chart li::before,
-.org-chart li::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    right: 50%;
-    border-top: 2px solid #0F6B53;
-    width: 50%;
-    height: 20px;
-}
-
-.org-chart li::after {
-    right: auto;
-    left: 50%;
-    border-left: 2px solid #0F6B53;
-}
-
-.org-chart li:only-child::after,
-.org-chart li:only-child::before {
-    display: none;
-}
-
-.org-chart li:only-child {
-    padding-top: 0;
-}
-
-.org-chart li:first-child::before,
-.org-chart li:last-child::after {
-    border: 0 none;
-}
-
-.org-chart li:last-child::before {
-    border-right: 2px solid #0F6B53;
-    border-radius: 0 5px 0 0;
-}
-
-.org-chart li:first-child::after {
-    border-radius: 5px 0 0 0;
-}
-
-/* Línea vertical hacia abajo */
-.org-chart ul ul::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 50%;
-    border-left: 2px solid #0F6B53;
-    width: 0;
-    height: 20px;
-}
-
-/* Estilo de los nodos */
-.node {
-    background: #0F6B53;
-    color: white;
-    padding: 10px 20px;
-    border-radius: 6px;
-    display: inline-block;
-    font-weight: 500;
-    min-width: 180px;
 }
 
 *{margin:0;padding:0;box-sizing:border-box;}
@@ -103,7 +26,8 @@ body{
     line-height:1.6;
 }
 
-/* NAV */
+/* HEADER */
+
 header{
     background:var(--white);
     padding:15px 8%;
@@ -111,6 +35,9 @@ header{
     justify-content:space-between;
     align-items:center;
     border-bottom:1px solid #e0e0e0;
+    position:sticky;
+    top:0;
+    z-index:100;
 }
 
 .logo{
@@ -135,29 +62,31 @@ nav a:hover{
 }
 
 /* HERO */
+
 .hero{
-    background:linear-gradient(rgba(10,78,62,0.85),rgba(10,78,62,0.85)),
+    background:linear-gradient(rgba(10,78,62,0.88),rgba(10,78,62,0.88)),
     url('https://images.unsplash.com/photo-1581091870627-3d69a4c2b6a2');
     background-size:cover;
     background-position:center;
     color:var(--white);
-    padding:140px 8%;
+    padding:160px 8%;
 }
 
 .hero h2{
-    font-size:42px;
-    max-width:700px;
+    font-size:46px;
+    max-width:750px;
 }
 
 .hero p{
     margin-top:20px;
     font-size:18px;
+    max-width:600px;
 }
 
 .btn{
     display:inline-block;
     margin-top:30px;
-    padding:12px 28px;
+    padding:14px 30px;
     background:var(--white);
     color:var(--primary-dark);
     font-weight:600;
@@ -165,18 +94,24 @@ nav a:hover{
     border-radius:4px;
 }
 
+.btn:hover{
+    background:#e5e5e5;
+}
+
 /* SECTIONS */
+
 section{
-    padding:80px 8%;
+    padding:100px 8%;
 }
 
 section h3{
-    font-size:30px;
+    font-size:32px;
     margin-bottom:30px;
     color:var(--primary-dark);
 }
 
 /* GRID */
+
 .grid{
     display:grid;
     grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
@@ -186,27 +121,65 @@ section h3{
 .card{
     background:var(--white);
     padding:30px;
-    border-radius:6px;
-    box-shadow:0 4px 12px rgba(0,0,0,0.05);
-    border-top:4px solid var(--primary);
+    border-radius:8px;
+    box-shadow:0 6px 18px rgba(0,0,0,0.06);
+    border-top:5px solid var(--primary);
 }
 
 /* ORGANIGRAMA */
-.org{
+
+.org-container{
     display:flex;
-    flex-wrap:wrap;
-    gap:20px;
+    flex-direction:column;
+    align-items:center;
+    margin-top:50px;
 }
 
-.org div{
+.org-box{
     background:var(--primary);
     color:white;
-    padding:15px 20px;
-    border-radius:5px;
-    font-weight:500;
+    padding:15px 30px;
+    border-radius:8px;
+    font-weight:600;
+    margin:15px 0;
+    box-shadow:0 6px 15px rgba(0,0,0,0.08);
+    min-width:220px;
+    text-align:center;
+}
+
+.org-box.wide{
+    min-width:320px;
+}
+
+.org-line{
+    width:3px;
+    height:40px;
+    background:var(--primary);
+}
+
+.org-connector{
+    width:60%;
+    height:3px;
+    background:var(--primary);
+    margin:20px 0;
+}
+
+.org-row{
+    display:flex;
+    gap:40px;
+    justify-content:center;
+    flex-wrap:wrap;
+}
+
+.org-sub{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    margin-top:20px;
 }
 
 /* GALERÍA */
+
 .gallery{
     display:grid;
     grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
@@ -215,14 +188,15 @@ section h3{
 
 .gallery img{
     width:100%;
-    border-radius:5px;
+    border-radius:8px;
     object-fit:cover;
-    height:200px;
+    height:220px;
 }
 
-/* FORMULARIO */
+/* FORM */
+
 form{
-    max-width:600px;
+    max-width:650px;
     margin:auto;
     display:flex;
     flex-direction:column;
@@ -230,18 +204,18 @@ form{
 }
 
 input, textarea{
-    padding:12px;
+    padding:14px;
     border:1px solid #ccc;
-    border-radius:4px;
+    border-radius:5px;
     font-size:14px;
 }
 
 button{
     background:var(--primary);
     color:white;
-    padding:12px;
+    padding:14px;
     border:none;
-    border-radius:4px;
+    border-radius:5px;
     font-weight:600;
     cursor:pointer;
 }
@@ -250,65 +224,33 @@ button:hover{
     background:var(--primary-dark);
 }
 
+/* FOOTER */
+
 footer{
     background:#083B2F;
     color:white;
     text-align:center;
-    padding:20px;
+    padding:25px;
     font-size:14px;
 }
-.estructura-section {
-    padding: 80px 20px;
-    text-align: center;
-}
 
-.org-chart {
-    position: relative;
-    margin-top: 40px;
-}
+/* RESPONSIVE */
 
-.level {
-    display: flex;
-    justify-content: center;
-    gap: 40px;
-    margin: 20px 0;
-    flex-wrap: wrap;
-}
+@media(max-width:768px){
+    .org-row{
+        flex-direction:column;
+        align-items:center;
+    }
 
-.box {
-    background-color: #146c43;
-    color: white;
-    padding: 15px 25px;
-    border-radius: 8px;
-    font-weight: 600;
-    min-width: 200px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
-}
+    .org-connector{
+        display:none;
+    }
 
-.vertical-line {
-    width: 3px;
-    height: 40px;
-    background-color: #146c43;
-    margin: 0 auto;
-}
-
-.horizontal-line {
-    width: 60%;
-    height: 3px;
-    background-color: #146c43;
-    margin: 0 auto;
-}
-
-.left-line {
-    position: relative;
-    left: -33%;
-}
-
-@media (max-width: 768px) {
-    .horizontal-line {
-        display: none;
+    .hero h2{
+        font-size:34px;
     }
 }
+
 </style>
 </head>
 
@@ -321,6 +263,7 @@ footer{
     </div>
     <nav>
         <a href="#nosotros">Nosotros</a>
+        <a href="#servicios">Servicios</a>
         <a href="#estructura">Estructura</a>
         <a href="#experiencia">Experiencia</a>
         <a href="#contacto">Contacto</a>
@@ -329,54 +272,63 @@ footer{
 
 <section class="hero">
     <h2>Construcción y Servicios Industriales</h2>
-    <p>Ingeniería de Precisión | Seguridad Certificada | Tasa 0 Accidentes</p>
-    <a href="#contacto" class="btn">Solicitar Información</a>
+    <p>Ejecutamos proyectos industriales con ingeniería de precisión, control técnico permanente y estándares de seguridad certificados.</p>
+    <a href="#contacto" class="btn">Solicitar Evaluación Técnica</a>
 </section>
 
 <section id="nosotros">
     <h3>Quiénes Somos</h3>
-    <p>En Estero, la solidez de nuestras obras nace de la experiencia de nuestra gente. Somos una constructora especializada en servicios industriales, formada por un equipo multidisciplinario de profesionales con más de 30 años de trayectoria liderando proyectos críticos en los sectores más exigentes del país.
-</p>
+    <p>
+        Constructora Estero es una empresa especializada en ejecución de proyectos industriales,
+        con foco en control técnico, seguridad operacional y cumplimiento normativo.
+        Integramos ingeniería, supervisión técnica y gestión contractual bajo una estructura organizacional sólida y trazable.
+    </p>
 </section>
 
-<section id="estructura" class="estructura-section">
-    <h2>Estructura Organizacional</h2>
-
-    <div class="org-chart">
-
-        <div class="level level-1">
-            <div class="box">Gerente General</div>
+<section id="servicios">
+    <h3>Servicios Industriales</h3>
+    <div class="grid">
+        <div class="card">
+            <h4>Ejecución de Obras Industriales</h4>
+            <p>Desarrollo y ejecución de proyectos en entornos productivos y de alta exigencia técnica.</p>
         </div>
-
-        <div class="vertical-line"></div>
-
-        <div class="level level-2">
-            <div class="box">Unidad de Prevención de Riesgos</div>
+        <div class="card">
+            <h4>Supervisión Técnica (ITO)</h4>
+            <p>Control de calidad, cumplimiento normativo y fiscalización técnica permanente.</p>
         </div>
-
-        <div class="horizontal-line"></div>
-
-        <div class="level level-3">
-            <div class="box">ITO</div>
-            <div class="box">Administración y Finanzas</div>
-            <div class="box">Gestión de Subcontratos</div>
+        <div class="card">
+            <h4>Gestión de Subcontratos</h4>
+            <p>Coordinación, evaluación y control de empresas colaboradoras.</p>
         </div>
-
-        <div class="vertical-line left-line"></div>
-
-        <div class="level level-4">
-            <div class="box">Supervisor y Calidad</div>
+        <div class="card">
+            <h4>Administración y Finanzas</h4>
+            <p>Gestión contractual, control presupuestario y seguimiento financiero de proyectos.</p>
         </div>
-
-        <div class="vertical-line left-line"></div>
-
-        <div class="level level-5">
-            <div class="box">Cuadrilla</div>
-        </div>
-
     </div>
 </section>
 
+<section id="estructura">
+    <h3 style="text-align:center;">Estructura Organizacional</h3>
+
+    <div class="org-container">
+        <div class="org-box">Gerente General</div>
+        <div class="org-line"></div>
+        <div class="org-box wide">Unidad de Prevención de Riesgos</div>
+        <div class="org-connector"></div>
+
+        <div class="org-row">
+            <div class="org-box">ITO</div>
+            <div class="org-box">Administración y Finanzas</div>
+            <div class="org-box">Gestión de Subcontratos</div>
+        </div>
+
+        <div class="org-sub">
+            <div class="org-box">Supervisor y Calidad</div>
+            <div class="org-line"></div>
+            <div class="org-box">Cuadrilla</div>
+        </div>
+    </div>
+</section>
 
 <section id="experiencia">
     <h3>Experiencia y Alcance Operativo</h3>
@@ -390,17 +342,13 @@ footer{
 
 <section id="contacto">
     <h3>Contacto</h3>
-
-    <!-- Cambia TU_CORREO por tu correo real -->
     <form action="https://formsubmit.co/erojas.estero@gmail.com" method="POST">
         <input type="text" name="nombre" placeholder="Nombre" required>
         <input type="email" name="email" placeholder="Correo electrónico" required>
-        <textarea name="mensaje" rows="5" placeholder="Mensaje" required></textarea>
+        <textarea name="mensaje" rows="5" placeholder="Describa brevemente su proyecto" required></textarea>
         <button type="submit">Enviar Mensaje</button>
-
         <input type="hidden" name="_captcha" value="false">
     </form>
-
 </section>
 
 <footer>
@@ -409,4 +357,3 @@ footer{
 
 </body>
 </html>
-
