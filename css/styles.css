@@ -206,25 +206,25 @@ footer{
         height:45px;
     }
 }
-.org-container{
+.org-wrapper{
     overflow-x:auto;
 }
 
 .org-chart{
     width:100%;
-    max-width:1100px;
+    max-width:1000px;
     display:block;
     margin:auto;
 }
 
 .org-chart rect{
     fill:#0F6B53;
-    filter:drop-shadow(0 5px 10px rgba(0,0,0,0.15));
+    filter:drop-shadow(0 4px 8px rgba(0,0,0,0.15));
 }
 
 .org-chart text{
     fill:white;
-    font-size:16px;
+    font-size:15px;
     font-weight:500;
     dominant-baseline:middle;
 }
