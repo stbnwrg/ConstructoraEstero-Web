@@ -4,10 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Constructora Estero | Construcción Sostenible</title>
-
 <link rel="stylesheet" href="css/styles.css">
-
 </head>
+
 <body>
 
 <header class="header">
@@ -21,117 +20,122 @@
 
     <nav class="nav">
         <a href="#nosotros">Nosotros</a>
-        <a href="#lineas">Líneas</a>
+        <a href="#estructura">Estructura</a>
         <a href="#contacto">Contacto</a>
     </nav>
 
     <div class="menu-toggle" onclick="toggleMenu()">☰</div>
 </header>
 
-<!-- HERO -->
+
+<!-- HERO SLIDER -->
 <section class="hero">
 
-    <div class="hero-overlay"></div>
+    <div class="slides">
+        <div class="slide active" style="background-image:url('img/hero1.jpg')"></div>
+        <div class="slide" style="background-image:url('img/hero2.jpg')"></div>
+        <div class="slide" style="background-image:url('img/hero3.jpg')"></div>
+        <div class="slide" style="background-image:url('img/hero4.jpg')"></div>
+        <div class="slide" style="background-image:url('img/hero5.jpg')"></div>
+        <div class="slide" style="background-image:url('img/hero6.jpg')"></div>
+    </div>
 
-    <div class="hero-text">
-    <h2 id="hero-title">Soluciones constructivas para industria y hogar</h2>
-    <p>Región del Biobío, Chile</p>
-</div>
+    <div class="overlay"></div>
+
+    <div class="hero-content">
+        <h2 id="hero-text">Construcción Industrial y Domiciliaria en la Región del Biobío</h2>
+    </div>
 
 </section>
 
+
+<!-- NOSOTROS -->
 <section id="nosotros" class="section">
     <h2>Quiénes Somos</h2>
     <p>
-        Fundada en 2023, Constructora Estero consolida más de 30 años
-        de experiencia en construcción domiciliaria y servicios industriales
-        en la Región del Biobío.
+        Fundada en 2023, Constructora Estero consolida más de 30 años de experiencia 
+        en construcción domiciliaria y servicios industriales en la Región del Biobío, Chile.
     </p>
 </section>
 
-<section id="lineas" class="section bg-light">
-    <h2>Nuestras Líneas de Negocio</h2>
 
-    <div class="cards">
+<!-- ESTRUCTURA ORGANIZACIONAL -->
+<section id="estructura" class="section estructura-section">
+<h2>Estructura Organizacional</h2>
 
-        <div class="card">
-            <h3>Servicios Industriales</h3>
-            <p>Seguridad, cumplimiento y continuidad operacional.</p>
-            <a href="servicios-industriales/" class="btn">Ver Línea Industrial</a>
-        </div>
+<div class="org-wrapper">
 
-        <div class="card">
-            <h3>Construcción Domiciliaria</h3>
-            <p>Proyectos llave en mano para clientes medio alto y premium.</p>
-            <a href="domiciliaria/" class="btn">Ver Línea Domiciliaria</a>
-        </div>
+<svg viewBox="0 0 1200 720" width="100%" xmlns="http://www.w3.org/2000/svg">
 
-    </div>
+<style>
+.box{ fill:#0F6B53; }
+.text{
+    fill:white;
+    font-size:16px;
+    font-family:Arial, sans-serif;
+    text-anchor:middle;
+    dominant-baseline:middle;
+}
+.line{
+    stroke:#0F6B53;
+    stroke-width:3;
+}
+</style>
+
+<!-- GERENTE -->
+<rect class="box" x="475" y="20" width="250" height="60" rx="8"/>
+<text class="text" x="600" y="50">Gerente General</text>
+
+<!-- Línea vertical central -->
+<line class="line" x1="600" y1="80" x2="600" y2="150"/>
+
+<!-- Línea horizontal nivel 2 (exactamente centrada) -->
+<line class="line" x1="175" y1="150" x2="1075" y2="150"/>
+
+<!-- NIVEL 2 -->
+
+<!-- Prevención -->
+<rect class="box" x="50" y="180" width="250" height="60" rx="8"/>
+<text class="text" x="175" y="210">Unidad de Prevención de Riesgos</text>
+<line class="line" x1="175" y1="150" x2="175" y2="180"/>
+
+<!-- ITO -->
+<rect class="box" x="350" y="180" width="250" height="60" rx="8"/>
+<text class="text" x="475" y="210">ITO</text>
+<line class="line" x1="475" y1="150" x2="475" y2="180"/>
+
+<!-- Administración -->
+<rect class="box" x="650" y="180" width="250" height="60" rx="8"/>
+<text class="text" x="775" y="210">Administración y Finanzas</text>
+<line class="line" x1="775" y1="150" x2="775" y2="180"/>
+
+<!-- Subcontratos -->
+<rect class="box" x="950" y="180" width="250" height="60" rx="8"/>
+<text class="text" x="1075" y="210">Gestión de Subcontratos</text>
+<line class="line" x1="1075" y1="150" x2="1075" y2="180"/>
+
+<!-- RAMA ITO -->
+<line class="line" x1="475" y1="240" x2="475" y2="310"/>
+
+<!-- Supervisor -->
+<rect class="box" x="350" y="310" width="250" height="60" rx="8"/>
+<text class="text" x="475" y="340">Supervisor y Calidad</text>
+
+<!-- Línea hacia Cuadrilla -->
+<line class="line" x1="475" y1="370" x2="475" y2="440"/>
+
+<!-- Cuadrilla -->
+<rect class="box" x="350" y="440" width="250" height="60" rx="8"/>
+<text class="text" x="475" y="470">Cuadrilla</text>
+
+</svg>
+
+</div>
 </section>
-<section id="estructura" style="padding:100px 8%; background:#f4f6f5; text-align:center;">
-    <h2 style="margin-bottom:60px;">Estructura Organizacional</h2>
-
-    <div style="max-width:1100px; margin:auto;">
-
-        <svg viewBox="0 0 1000 700" width="100%" height="auto">
-
-            <!-- ===== CAJAS ===== -->
-
-            <!-- Gerente General -->
-            <rect x="375" y="20" width="250" height="60" rx="10" fill="#0F6B53"/>
-            <text x="500" y="55" fill="white" font-size="18" text-anchor="middle" dominant-baseline="middle">Gerente General</text>
-
-            <!-- Nivel 2 -->
-            <rect x="50" y="180" width="250" height="60" rx="10" fill="#0F6B53"/>
-            <text x="175" y="215" fill="white" font-size="16" text-anchor="middle" dominant-baseline="middle">
-                Unidad de Prevención de Riesgos
-            </text>
-
-            <rect x="375" y="180" width="250" height="60" rx="10" fill="#0F6B53"/>
-            <text x="500" y="215" fill="white" font-size="16" text-anchor="middle" dominant-baseline="middle">ITO</text>
-
-            <rect x="700" y="180" width="250" height="60" rx="10" fill="#0F6B53"/>
-            <text x="825" y="215" fill="white" font-size="16" text-anchor="middle" dominant-baseline="middle">Administración y Finanzas</text>
-
-            <rect x="700" y="300" width="250" height="60" rx="10" fill="#0F6B53"/>
-            <text x="825" y="335" fill="white" font-size="16" text-anchor="middle" dominant-baseline="middle">Gestión de Subcontratos</text>
-
-            <!-- Supervisor -->
-            <rect x="375" y="300" width="250" height="60" rx="10" fill="#0F6B53"/>
-            <text x="500" y="335" fill="white" font-size="16" text-anchor="middle" dominant-baseline="middle">Supervisor y Calidad</text>
-
-            <!-- Cuadrilla -->
-            <rect x="375" y="420" width="250" height="60" rx="10" fill="#0F6B53"/>
-            <text x="500" y="455" fill="white" font-size="16" text-anchor="middle" dominant-baseline="middle">Cuadrilla</text>
 
 
-            <!-- ===== LÍNEAS ===== -->
-
-            <!-- Gerente hacia nivel 2 -->
-            <line x1="500" y1="80" x2="500" y2="150" stroke="#0F6B53" stroke-width="3"/>
-
-            <!-- Línea horizontal nivel 2 -->
-            <line x1="175" y1="150" x2="825" y2="150" stroke="#0F6B53" stroke-width="3"/>
-
-            <!-- Bajadas nivel 2 -->
-            <line x1="175" y1="150" x2="175" y2="180" stroke="#0F6B53" stroke-width="3"/>
-            <line x1="500" y1="150" x2="500" y2="180" stroke="#0F6B53" stroke-width="3"/>
-            <line x1="825" y1="150" x2="825" y2="180" stroke="#0F6B53" stroke-width="3"/>
-
-            <!-- ITO hacia Supervisor -->
-            <line x1="500" y1="240" x2="500" y2="300" stroke="#0F6B53" stroke-width="3"/>
-
-            <!-- Supervisor hacia Cuadrilla -->
-            <line x1="500" y1="360" x2="500" y2="420" stroke="#0F6B53" stroke-width="3"/>
-
-            <!-- Administración hacia Subcontratos -->
-            <line x1="825" y1="240" x2="825" y2="300" stroke="#0F6B53" stroke-width="3"/>
-
-        </svg>
-
-    </div>
-</section>
-<section id="contacto" class="section">
+<!-- CONTACTO -->
+<section id="contacto" class="section bg-light">
     <h2>Contacto</h2>
     <form action="https://formsubmit.co/erojas.estero@gmail.com" method="POST">
         <input type="text" name="nombre" placeholder="Nombre" required>
@@ -143,34 +147,42 @@
 </section>
 
 <footer>
-    © 2026 Constructora Estero | Región del Biobío, Chile
+© 2026 Constructora Estero | Región del Biobío, Chile
 </footer>
+
 
 <script>
 function toggleMenu(){
     document.querySelector(".nav").classList.toggle("active");
 }
-</script>
-<script>
-const phrases = [
-    "Construimos futuro con precisión y sostenibilidad",
-    "Confianza en proyectos domiciliarios premium",
-    "Seguridad y cumplimiento en servicios industriales"
+
+let slides=document.querySelectorAll(".slide");
+let current=0;
+
+setInterval(()=>{
+    slides[current].classList.remove("active");
+    current=(current+1)%slides.length;
+    slides[current].classList.add("active");
+},5000);
+
+const frases=[
+"Liderando la construcción sostenible desde el sur de Chile",
+"Confianza en proyectos domiciliarios premium",
+"Seguridad y cumplimiento en servicios industriales"
 ];
 
-let phraseIndex = 0;
-const heroTitle = document.getElementById("hero-title");
+let fraseIndex=0;
+const heroText=document.getElementById("hero-text");
 
-setInterval(() => {
-    phraseIndex = (phraseIndex + 1) % phrases.length;
-    heroTitle.style.opacity = 0;
-
-    setTimeout(() => {
-        heroTitle.textContent = phrases[phraseIndex];
-        heroTitle.style.opacity = 1;
-    }, 500);
-
-}, 4000);
+setInterval(()=>{
+    fraseIndex=(fraseIndex+1)%frases.length;
+    heroText.style.opacity=0;
+    setTimeout(()=>{
+        heroText.innerText=frases[fraseIndex];
+        heroText.style.opacity=1;
+    },400);
+},4000);
 </script>
+
 </body>
 </html>
