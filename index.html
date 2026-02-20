@@ -6,93 +6,7 @@
 <title>Constructora Estero | Construcción y Servicios Industriales</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-/* ===== ORGANIGRAMA PROFESIONAL REAL ===== */
 
-.org-chart ul {
-    padding-top: 20px;
-    position: relative;
-    display: flex;
-    justify-content: center;
-}
-
-.org-chart li {
-    list-style-type: none;
-    text-align: center;
-    position: relative;
-    padding: 20px 15px 0 15px;
-}
-
-/* Líneas horizontales */
-.org-chart li::before,
-.org-chart li::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    right: 50%;
-    border-top: 2px solid var(--primary);
-    width: 50%;
-    height: 20px;
-}
-
-.org-chart li::after {
-    right: auto;
-    left: 50%;
-    border-left: 2px solid var(--primary);
-}
-
-/* Elimina líneas innecesarias */
-.org-chart li:only-child::after,
-.org-chart li:only-child::before {
-    display: none;
-}
-
-.org-chart li:only-child {
-    padding-top: 0;
-}
-
-.org-chart li:first-child::before,
-.org-chart li:last-child::after {
-    border: 0 none;
-}
-
-.org-chart li:last-child::before {
-    border-right: 2px solid var(--primary);
-}
-
-.org-chart li:first-child::after {
-    border-radius: 5px 0 0 0;
-}
-
-/* Línea vertical */
-.org-chart ul ul::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 50%;
-    border-left: 2px solid var(--primary);
-    width: 0;
-    height: 20px;
-}
-
-/* Nodos */
-.node {
-    background: var(--primary);
-    color: white;
-    padding: 12px 25px;
-    border-radius: 8px;
-    display: inline-block;
-    font-weight: 600;
-    min-width: 200px;
-    box-shadow: 0 6px 15px rgba(0,0,0,0.08);
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-    .org-chart ul {
-        flex-direction: column;
-        align-items: center;
-    }
-}
 <style>
 
 :root{
@@ -103,10 +17,14 @@
     --white:#ffffff;
 }
 
-*{margin:0;padding:0;box-sizing:border-box;}
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
 
 body{
-    font-family:'Inter',sans-serif;
+    font-family:'Inter', sans-serif;
     background:var(--light);
     color:var(--dark);
     line-height:1.6;
@@ -121,9 +39,6 @@ header{
     justify-content:space-between;
     align-items:center;
     border-bottom:1px solid #e0e0e0;
-    position:sticky;
-    top:0;
-    z-index:100;
 }
 
 .logo{
@@ -150,17 +65,17 @@ nav a:hover{
 /* HERO */
 
 .hero{
-    background:linear-gradient(rgba(10,78,62,0.88),rgba(10,78,62,0.88)),
+    background:linear-gradient(rgba(10,78,62,0.85),rgba(10,78,62,0.85)),
     url('https://images.unsplash.com/photo-1581091870627-3d69a4c2b6a2');
     background-size:cover;
     background-position:center;
     color:var(--white);
-    padding:160px 8%;
+    padding:150px 8%;
 }
 
-.hero h2{
-    font-size:46px;
-    max-width:750px;
+.hero h1{
+    font-size:44px;
+    max-width:700px;
 }
 
 .hero p{
@@ -177,7 +92,7 @@ nav a:hover{
     color:var(--primary-dark);
     font-weight:600;
     text-decoration:none;
-    border-radius:4px;
+    border-radius:5px;
 }
 
 .btn:hover{
@@ -190,17 +105,18 @@ section{
     padding:100px 8%;
 }
 
-section h3{
+section h2{
     font-size:32px;
     margin-bottom:30px;
     color:var(--primary-dark);
+    text-align:center;
 }
 
 /* GRID */
 
 .grid{
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
     gap:30px;
 }
 
@@ -208,47 +124,43 @@ section h3{
     background:var(--white);
     padding:30px;
     border-radius:8px;
-    box-shadow:0 6px 18px rgba(0,0,0,0.06);
+    box-shadow:0 6px 18px rgba(0,0,0,0.05);
     border-top:5px solid var(--primary);
 }
 
-<section id="estructura">
-    <h3 style="text-align:center;">Estructura Organizacional</h3>
+/* ORGANIGRAMA SIMPLE Y ESTABLE */
 
-    <div class="org-chart">
-        <ul>
-            <li>
-                <div class="node">Gerente General</div>
-                <ul>
-                    <li>
-                        <div class="node">Unidad de Prevención de Riesgos</div>
-                        <ul>
-                            <li>
-                                <div class="node">ITO</div>
-                                <ul>
-                                    <li>
-                                        <div class="node">Supervisor y Calidad</div>
-                                        <ul>
-                                            <li>
-                                                <div class="node">Cuadrilla</div>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li>
-                                <div class="node">Administración y Finanzas</div>
-                            </li>
-                            <li>
-                                <div class="node">Gestión de Subcontratos</div>
-                            </li>
-                        </ul>
-                    </li>
-                </ul>
-            </li>
-        </ul>
-    </div>
-</section>
+.org{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:20px;
+    margin-top:40px;
+}
+
+.org-row{
+    display:flex;
+    gap:40px;
+    justify-content:center;
+    flex-wrap:wrap;
+}
+
+.org-box{
+    background:var(--primary);
+    color:white;
+    padding:14px 28px;
+    border-radius:8px;
+    font-weight:600;
+    min-width:220px;
+    text-align:center;
+}
+
+.org-line{
+    width:3px;
+    height:30px;
+    background:var(--primary);
+}
+
 /* GALERÍA */
 
 .gallery{
@@ -259,15 +171,15 @@ section h3{
 
 .gallery img{
     width:100%;
-    border-radius:8px;
-    object-fit:cover;
     height:220px;
+    object-fit:cover;
+    border-radius:8px;
 }
 
 /* FORM */
 
 form{
-    max-width:650px;
+    max-width:600px;
     margin:auto;
     display:flex;
     flex-direction:column;
@@ -305,20 +217,14 @@ footer{
     font-size:14px;
 }
 
-/* RESPONSIVE */
-
 @media(max-width:768px){
+    .hero h1{
+        font-size:34px;
+    }
+
     .org-row{
         flex-direction:column;
         align-items:center;
-    }
-
-    .org-connector{
-        display:none;
-    }
-
-    .hero h2{
-        font-size:34px;
     }
 }
 
@@ -342,50 +248,51 @@ footer{
 </header>
 
 <section class="hero">
-    <h2>Construcción y Servicios Industriales</h2>
-    <p>Ejecutamos proyectos industriales con ingeniería de precisión, control técnico permanente y estándares de seguridad certificados.</p>
-    <a href="#contacto" class="btn">Solicitar Evaluación Técnica</a>
+    <h1>Construcción y Servicios Industriales</h1>
+    <p>Ingeniería de precisión, control técnico permanente y seguridad certificada en cada proyecto.</p>
+    <a href="#contacto" class="btn">Solicitar Información</a>
 </section>
 
 <section id="nosotros">
-    <h3>Quiénes Somos</h3>
-    <p>
+    <h2>Quiénes Somos</h2>
+    <p style="max-width:800px;margin:auto;text-align:center;">
         Constructora Estero es una empresa especializada en ejecución de proyectos industriales,
-        con foco en control técnico, seguridad operacional y cumplimiento normativo.
-        Integramos ingeniería, supervisión técnica y gestión contractual bajo una estructura organizacional sólida y trazable.
+        integrando supervisión técnica, gestión contractual y estándares de seguridad de alto nivel.
+        Contamos con más de 30 años de experiencia liderando proyectos en sectores exigentes.
     </p>
 </section>
 
 <section id="servicios">
-    <h3>Servicios Industriales</h3>
+    <h2>Servicios Industriales</h2>
     <div class="grid">
         <div class="card">
-            <h4>Ejecución de Obras Industriales</h4>
-            <p>Desarrollo y ejecución de proyectos en entornos productivos y de alta exigencia técnica.</p>
+            <h3>Ejecución de Obras</h3>
+            <p>Desarrollo y ejecución de proyectos en entornos industriales de alta exigencia.</p>
         </div>
         <div class="card">
-            <h4>Supervisión Técnica (ITO)</h4>
-            <p>Control de calidad, cumplimiento normativo y fiscalización técnica permanente.</p>
+            <h3>Supervisión Técnica (ITO)</h3>
+            <p>Control de calidad, cumplimiento normativo y fiscalización permanente.</p>
         </div>
         <div class="card">
-            <h4>Gestión de Subcontratos</h4>
+            <h3>Gestión de Subcontratos</h3>
             <p>Coordinación, evaluación y control de empresas colaboradoras.</p>
         </div>
         <div class="card">
-            <h4>Administración y Finanzas</h4>
+            <h3>Administración y Finanzas</h3>
             <p>Gestión contractual, control presupuestario y seguimiento financiero de proyectos.</p>
         </div>
     </div>
 </section>
 
 <section id="estructura">
-    <h3 style="text-align:center;">Estructura Organizacional</h3>
+    <h2>Estructura Organizacional</h2>
 
-    <div class="org-container">
+    <div class="org">
         <div class="org-box">Gerente General</div>
         <div class="org-line"></div>
-        <div class="org-box wide">Unidad de Prevención de Riesgos</div>
-        <div class="org-connector"></div>
+
+        <div class="org-box">Unidad de Prevención de Riesgos</div>
+        <div class="org-line"></div>
 
         <div class="org-row">
             <div class="org-box">ITO</div>
@@ -393,33 +300,36 @@ footer{
             <div class="org-box">Gestión de Subcontratos</div>
         </div>
 
-        <div class="org-sub">
-            <div class="org-box">Supervisor y Calidad</div>
-            <div class="org-line"></div>
-            <div class="org-box">Cuadrilla</div>
-        </div>
+        <div class="org-line"></div>
+        <div class="org-box">Supervisor y Calidad</div>
+
+        <div class="org-line"></div>
+        <div class="org-box">Cuadrilla</div>
     </div>
+
 </section>
 
 <section id="experiencia">
-    <h3>Experiencia y Alcance Operativo</h3>
+    <h2>Experiencia y Alcance Operativo</h2>
     <div class="gallery">
-        <img src="img/obra1.png">
-        <img src="img/obra2.png">
-        <img src="img/obra3.png">
-        <img src="img/obra4.png">
+        <img src="img/obra1.png" alt="">
+        <img src="img/obra2.png" alt="">
+        <img src="img/obra3.png" alt="">
+        <img src="img/obra4.png" alt="">
     </div>
 </section>
 
 <section id="contacto">
-    <h3>Contacto</h3>
+    <h2>Contacto</h2>
+
     <form action="https://formsubmit.co/erojas.estero@gmail.com" method="POST">
         <input type="text" name="nombre" placeholder="Nombre" required>
         <input type="email" name="email" placeholder="Correo electrónico" required>
-        <textarea name="mensaje" rows="5" placeholder="Describa brevemente su proyecto" required></textarea>
+        <textarea name="mensaje" rows="5" placeholder="Describa su proyecto" required></textarea>
         <button type="submit">Enviar Mensaje</button>
         <input type="hidden" name="_captcha" value="false">
     </form>
+
 </section>
 
 <footer>
