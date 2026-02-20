@@ -257,6 +257,58 @@ footer{
     padding:20px;
     font-size:14px;
 }
+.estructura-section {
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.org-chart {
+    position: relative;
+    margin-top: 40px;
+}
+
+.level {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin: 20px 0;
+    flex-wrap: wrap;
+}
+
+.box {
+    background-color: #146c43;
+    color: white;
+    padding: 15px 25px;
+    border-radius: 8px;
+    font-weight: 600;
+    min-width: 200px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+.vertical-line {
+    width: 3px;
+    height: 40px;
+    background-color: #146c43;
+    margin: 0 auto;
+}
+
+.horizontal-line {
+    width: 60%;
+    height: 3px;
+    background-color: #146c43;
+    margin: 0 auto;
+}
+
+.left-line {
+    position: relative;
+    left: -33%;
+}
+
+@media (max-width: 768px) {
+    .horizontal-line {
+        display: none;
+    }
+}
 </style>
 </head>
 
@@ -287,42 +339,40 @@ footer{
 </p>
 </section>
 
-<section id="estructura">
-    <h3>Estructura Organizacional</h3>
+<section id="estructura" class="estructura-section">
+    <h2>Estructura Organizacional</h2>
 
     <div class="org-chart">
 
-        <ul>
-            <li>
-                <div class="node">Gerente General</div>
-                <ul>
-                    <li>
-                        <div class="node">Unidad de Prevención de Riesgos</div>
-                        <ul>
-                            <li>
-                                <div class="node">ITO</div>
-                                <ul>
-                                    <li>
-                                        <div class="node">Supervisor y Calidad</div>
-                                        <ul>
-                                            <li>
-                                                <div class="node">Cuadrilla</div>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li>
-                                <div class="node">Administración y Finanzas</div>
-                            </li>
-                            <li>
-                                <div class="node">Gestión de Subcontratos</div>
-                            </li>
-                        </ul>
-                    </li>
-                </ul>
-            </li>
-        </ul>
+        <div class="level level-1">
+            <div class="box">Gerente General</div>
+        </div>
+
+        <div class="vertical-line"></div>
+
+        <div class="level level-2">
+            <div class="box">Unidad de Prevención de Riesgos</div>
+        </div>
+
+        <div class="horizontal-line"></div>
+
+        <div class="level level-3">
+            <div class="box">ITO</div>
+            <div class="box">Administración y Finanzas</div>
+            <div class="box">Gestión de Subcontratos</div>
+        </div>
+
+        <div class="vertical-line left-line"></div>
+
+        <div class="level level-4">
+            <div class="box">Supervisor y Calidad</div>
+        </div>
+
+        <div class="vertical-line left-line"></div>
+
+        <div class="level level-5">
+            <div class="box">Cuadrilla</div>
+        </div>
 
     </div>
 </section>
