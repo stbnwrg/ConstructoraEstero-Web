@@ -1,0 +1,145 @@
+body{
+    margin:0;
+    font-family:Arial, sans-serif;
+}
+
+.header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:15px 8%;
+    background:#ffffff;
+    border-bottom:1px solid #eee;
+}
+
+.logo{
+    font-weight:bold;
+}
+
+.nav a{
+    margin-left:20px;
+    text-decoration:none;
+    color:#0F6B53;
+}
+
+.menu-toggle{
+    display:none;
+    cursor:pointer;
+}
+
+.hero{
+    height:70vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    background:#0F6B53;
+    color:white;
+}
+
+.slide{
+    display:none;
+}
+
+.slide.active{
+    display:block;
+}
+
+.section{
+    padding:80px 8%;
+    text-align:center;
+}
+
+.bg-light{
+    background:#f4f6f5;
+}
+
+.cards{
+    display:flex;
+    gap:30px;
+    justify-content:center;
+    flex-wrap:wrap;
+}
+
+.card{
+    background:white;
+    padding:30px;
+    border-radius:8px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.05);
+    width:300px;
+}
+
+.btn{
+    display:inline-block;
+    margin-top:20px;
+    padding:10px 20px;
+    background:#0F6B53;
+    color:white;
+    text-decoration:none;
+    border-radius:5px;
+}
+
+.indicators{
+    display:flex;
+    justify-content:center;
+    gap:50px;
+    flex-wrap:wrap;
+}
+
+form{
+    max-width:500px;
+    margin:auto;
+    display:flex;
+    flex-direction:column;
+    gap:15px;
+}
+
+input, textarea{
+    padding:12px;
+    border:1px solid #ccc;
+    border-radius:5px;
+}
+
+button{
+    background:#0F6B53;
+    color:white;
+    border:none;
+    padding:12px;
+    border-radius:5px;
+    cursor:pointer;
+}
+
+footer{
+    background:#083B2F;
+    color:white;
+    text-align:center;
+    padding:20px;
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+    .nav{
+        display:none;
+        flex-direction:column;
+        position:absolute;
+        top:60px;
+        right:20px;
+        background:white;
+        padding:20px;
+        box-shadow:0 5px 15px rgba(0,0,0,0.1);
+    }
+
+    .nav.active{
+        display:flex;
+    }
+
+    .menu-toggle{
+        display:block;
+    }
+
+    .hero{
+        height:50vh;
+    }
+}
